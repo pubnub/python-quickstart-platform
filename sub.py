@@ -21,7 +21,7 @@ class MySubscribeCallback(SubscribeCallback):
         print("[MESSAGE received]")
 
         if event.message["update"] == "42":
-            print "The publisher has ended the session."
+            print("The publisher has ended the session.")
             os._exit(0)
         else:
             print("{}: {}".format(event.message["entry"], event.message["update"]))
