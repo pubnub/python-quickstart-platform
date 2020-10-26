@@ -1,4 +1,4 @@
-# Python PubNub Sample App
+# PubNub Python Sample App
 
 This repository contains the files required to run the [PubNub Python Quickstart](https://www.pubnub.com/docs/platform/quickstarts/python).
 
@@ -19,7 +19,7 @@ If you don't want to copy the code from this document, you can clone the reposit
 3. Install the PubNub Python SDK using `pip`:
 
     ```text
-    pip install 'pubnub>=4.5.1'
+    pip install 'pubnub>=4.6.0'
     ```
 
 ## Add project files
@@ -66,7 +66,6 @@ If you don't want to copy the code from this document, you can clone the reposit
             print("[PUBLISH: sent]")
             print("timetoken: %s" % envelope.result.timetoken)
             pass
-
     ```
 
 2. Open the `sub.py` file and add the following code. Remember to also replace the _myPublishKey_ and _mySubscribeKey_ placeholders with your keys.
@@ -135,12 +134,11 @@ You first need to start the subcribe process to see the updates you want to publ
 
     You should see a message that the script is waiting for updates. The subscriber process is implemented to receive updates from the publisher process, so you don't need any further input here.
 
-
 2. In a new terminal window, run the publish script by calling `python pub.py`.
 
     You should see a message that informs you how to exit the process and a prompt that awaits your next update.
 
-    When you're finished submitting entries, you can enter `42` to exit the publisher script. Note that this operation forces the subscriber script to exit.
+    When you're finished submitting entries, enter `42` to exit the publisher script. This operation also forces the subscriber script to exit.
 
 ## Documentation
 
@@ -149,4 +147,4 @@ You first need to start the subcribe process to see the updates you want to publ
 
 ## Support
 
-If you **need help** or have a **general question**, contact <support@pubnub.com>.
+If you **need help** or have a **general question**, contact support@pubnub.com.
