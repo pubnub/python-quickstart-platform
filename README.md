@@ -61,11 +61,9 @@ If you don't want to copy the code from this document, you can clone the reposit
         if envelope.status.is_error():
             print("[PUBLISH: fail]")
             print("error: %s" % envelope.status.error)
-            pass
         else:
             print("[PUBLISH: sent]")
             print("timetoken: %s" % envelope.result.timetoken)
-            pass
     ```
 
 2. Open the `sub.py` file and add the following code. Remember to also replace the _myPublishKey_ and _mySubscribeKey_ placeholders with your keys.
@@ -98,32 +96,26 @@ If you don't want to copy the code from this document, you can clone the reposit
                 os._exit(0)
             else:
                 print("{}: {}".format(event.message["entry"], event.message["update"]))
-            
-            print
-            pass
 
         def presence(self, pubnub, event):
             print("[PRESENCE: {}]".format(event.event))
             print("uuid: {}, channel: {}".format(event.uuid, event.channel))
-            print
-            pass
+            print()
 
         def status(self, pubnub, event):
             if event.category == PNStatusCategory.PNConnectedCategory:
                 print("[STATUS: PNConnectedCategory]")
                 print("connected to channels: {}".format(event.affected_channels))
-                print
-            
-            pass
+                print()
 
     pubnub.add_listener(MySubscribeCallback())
     pubnub.subscribe().channels(CHANNEL).with_presence().execute()
 
-    print
+    print()
     print("***************************************************")
     print("* Waiting for updates to The Guide about {}... *".format(ENTRY))
     print("***************************************************")
-    print
+    print()
     ```
 
 ## Run the app
