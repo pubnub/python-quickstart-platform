@@ -15,23 +15,20 @@ pnconfig.uuid = "serverUUID-PUB"
 
 pubnub = PubNub(pnconfig)
 
-print
+
 print("*****************************************")
 print("* Submit updates to The Guide for Earth *")
 print("*     Enter 42 to exit this process     *")
 print("*****************************************")
 
 while the_update != "42":
-    print
-    the_update = raw_input("Enter an update for Earth: ")
+    the_update = input("Enter an update for Earth: ")
     the_message = {"entry": ENTRY, "update": the_update}
     envelope = pubnub.publish().channel(CHANNEL).message(the_message).sync()
 
     if envelope.status.is_error():
         print("[PUBLISH: fail]")
-        print("error: %s" % status.error)
-        pass
+        print("error: %s" % envelope.status.error)
     else:
         print("[PUBLISH: sent]")
         print("timetoken: %s" % envelope.result.timetoken)
-        pass
