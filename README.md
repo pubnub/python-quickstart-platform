@@ -46,14 +46,12 @@ If you don't want to copy the code from this document, you can clone the reposit
 
     pubnub = PubNub(pnconfig)
 
-    print
     print("*****************************************")
     print("* Submit updates to The Guide for Earth *")
     print("*     Enter 42 to exit this process     *")
     print("*****************************************")
 
     while the_update != "42":
-        print
         the_update = input("Enter an update for Earth: ")
         the_message = {"entry": ENTRY, "update": the_update}
         envelope = pubnub.publish().channel(CHANNEL).message(the_message).sync()
@@ -93,7 +91,7 @@ If you don't want to copy the code from this document, you can clone the reposit
 
             if event.message["update"] == "42":
                 print("The publisher has ended the session.")
-                os._exit(0)
+                exit(0)
             else:
                 print("{}: {}".format(event.message["entry"], event.message["update"]))
 
