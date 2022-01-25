@@ -19,7 +19,7 @@ If you don't want to copy the code from this document, you can clone the reposit
 3. Install the PubNub Python SDK using `pip`:
 
     ```text
-    pip install 'pubnub>=4.6.0'
+    pip install pubnub
     ```
 
 ## Add project files
